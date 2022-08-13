@@ -1,0 +1,66 @@
+{% extends "subadmin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/subadmin_add_staff_post" enctype="multipart/form-data">
+  <table width="200" border="1" CLASS="table table-bordered">
+    <tr>
+      <td>Choose Department</td>
+      <td><label for="textfield"></label>
+    <select name="dept" class="form-control">
+        {% for i in dept %}
+            <option value="{{ i["did"] }}">{{ i["department_name"] }}</option>
+        {% endfor %}
+    </select>
+      </td>
+    </tr><tr>
+      <td>Staff Name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="imageField" id="imageField"  width="150" height="150" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+          Male
+      <input type="radio" name="radio" id="radio" value="male" />
+          Female
+      <input type="radio" name="radio" id="radio2" value="female" />
+        Other
+          <input type="radio" name="radio" id="radio2" value="other" />
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><label for="dob"></label>
+      <input type="date" name="dob" id="dob" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Experience</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Contact</td>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="SAVE" CLASS="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "admin/adminblank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_add_fee_search_post">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>Course</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" CLASS="form-control"/></td>
+      <td><input type="submit" name="button" id="button" value="search" CLASS="btn btn-success"/></td>
+    </tr>
+  </table>
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>*</td>
+      <td>Sem</td>
+      <td>Fee</td>
+      <td>Due Date</td>
+      <td>Last Date</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['sem'] }}</td>
+      <td>&nbsp;{{ i['fee'] }}</td>
+      <td>{{ i['due_date'] }}&nbsp;</td>
+      <td>{{ i['late_date'] }}&nbsp;</td>
+        <td><p><a href="#" class="btn btn-success">EDIT</a></p></td>
+      <td><p><a href="/admin_delete_fee/{{ i['fid'] }}" class="btn btn-success">DELETE</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+
+
+{% endblock %}

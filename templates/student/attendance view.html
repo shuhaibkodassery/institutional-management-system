@@ -1,0 +1,304 @@
+{% extends "student/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/student_view_attendance_post">
+  <table width="200" border="1">
+    <tr>
+      <td>year</td>
+      <td><label for="select"></label>
+        <select name="select" id="select">
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+          <option value="2027">2027</option>
+          <option value="2028">2028</option>
+          <option value="2029">2029</option>
+          <option value="2030">2030</option>
+      </select></td>
+      <td>month</td>
+      <td><label for="select2"></label>
+        <select name="select2" id="select2">
+            <option value="1">january</option>
+            <option value="2">february</option>
+            <option value="3">march</option>
+            <option value="4">april</option>
+            <option value="5">may</option>
+            <option value="6">june</option>
+            <option value="7">july</option>
+            <option value="8">august</option>
+            <option value="9">september</option>
+            <option value="10">october</option>
+            <option value="11">november</option>
+            <option value="12">december</option>
+      </select></td>
+      <td><input type="submit" name="button" id="button" value="show" /></td>
+    </tr>
+  </table>
+  <table width="200" border="1">
+    <tr>
+      <td>#</td>
+      <td>hour 1</td>
+      <td>hour 2</td>
+      <td>hour 3</td>
+      <td>hour 4</td>
+      <td>hour 5</td>
+    </tr>
+      {% for i in range(cnt) %}
+    <tr>
+      <td>{{ i+1 }}</td>
+      <td>{{ data[i][0] }}&nbsp;</td>
+      <td>&nbsp;{{ data[i][1] }}</td>
+      <td>{{ data[i][2] }}&nbsp;</td>
+      <td>{{ data[i][3] }}&nbsp;</td>
+      <td>{{ data[i][4] }}&nbsp;</td>
+    </tr>
+      {% endfor %}
+{#    <tr>#}
+{#      <td>2</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>3</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>4</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>5</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>6</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>7</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>8</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>9</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>10</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>11</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>12</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>13</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>14</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>15</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>16</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>17</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>18</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>19</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>20</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>21</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>22</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>23</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>24</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>25</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>26</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>27</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>28</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>29</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>30</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+{#    <tr>#}
+{#      <td>31</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#      <td>&nbsp;</td>#}
+{#    </tr>#}
+  </table>
+</form>
+
+
+
+{% endblock %}

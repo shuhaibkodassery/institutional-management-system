@@ -1,0 +1,38 @@
+{% extends "admin/adminblank.html" %}
+{% block body %}
+<form action="admin_add_sub_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <table width="257" border="1" class="table table-bordered">
+    <tr>
+      <td width="177"><label for="textfield"></label>Name
+      <input type="text" name="textfield" id="textfield" class="form-control" /></td>
+      <td width="64"><input type="submit" name="button" id="button" value="search"  class="btn btn-success"/></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table width="479" border="1" class="table table-bordered">
+    <tr>
+      <td width="32"><h3>*</h3></td>
+      <td width="218"><label for="fileField">name</label></td>
+      <td width="4">photo</td>
+      <td width="4">gender</td>
+      <td width="4">contact</td>
+      <td width="4">designation</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i["name"]}}</td>
+      <td><img src="{{ i["photo"] }}" alt="" height="100px" width="100px"/></td>
+      <td>{{ i["gender"] }}</td>
+      <td>{{i["phone"]}},{{i[email]}}</td>
+      <td>{{i["designation"] }}</td>
+      <p>
+        <td><a href="/admin_view_subadmin3/{{ i['subadmin_id'] }}" class="btn btn-success">EDIT</a></td>
+      </p>
+      <p>
+        <td><a href="/admin_view_subadmin2/{{ i['subadmin_id'] }}" class="btn btn-success">DELETE</a></td>
+      </p></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>{% endblock %}

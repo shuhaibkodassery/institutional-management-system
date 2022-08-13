@@ -1,0 +1,76 @@
+{% extends "subadmin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/subadmin_edit_staff_post" enctype="multipart/form-data">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td colspan="2"><img src="{{ data['photo'] }}" width="100%" height="100%" /></td>
+  </tr>
+  <input type="hidden" value="{{ data['staff_id'] }}" name="staffid">
+    <tr>
+      <td>Choose Department</td>
+      <td><label for="textfield"></label>
+
+    <select name="dept" CLASS="form-control">
+
+    <option>--select--</option>
+        {% for i in dept %}
+            {%  if data['did']== i['did'] %}
+            <option value="{{ i["did"] }}" selected>{{ i["department_name"] }}</option>
+
+            {% else %}
+
+            <option value="{{ i["did"] }}" >{{ i["department_name"] }}</option>
+
+            {% endif %}
+        {% endfor %}
+    </select>
+      </td>
+    </tr><tr>
+      <td>Staff Name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ data['staff_name'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="imageField" id="imageField"  width="150" height="150" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+
+      <input type="text" name="radio" id="radio" value="{{ data['gender'] }}" CLASS="form-control"/>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td><label for="dob"></label>
+      <input type="date" name="dob" id="dob" value="{{ data['dob'] }}" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Qualification</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" value="{{ data['qualification'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Experience</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" value="{{ data['experience'] }}" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Contact</td>
+      <td><label for="textfield4"></label>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data['contact'] }}"CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label for="textfield5"></label>
+      <input type="text" name="textfield5" id="textfield5" value="{{ data['email'] }}" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2" align="center"><input  type="submit" name="button" id="button" value="UPDATE" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+
+
+{% endblock %}

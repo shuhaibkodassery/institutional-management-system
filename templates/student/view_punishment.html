@@ -1,0 +1,32 @@
+{% extends "student/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <td>Sno</td>
+      <td>Photo</td>
+      <td>Reason</td>
+      <td>Punishment</td>
+        <td>FromDate</td>
+        <td>ToDate</td>
+    </tr>
+
+
+  `photo` `reason` `punishment` `from_date` `to_date`
+
+
+
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;<img src="{{ i['photo'] }}" width="90px" height="90px"/> </td>
+      <td>&nbsp;{{ i['reason'] }}</td>
+        <td>{{ i['punishment'] }}</td>
+        <td>{{ i['from_date'] }}</td>
+        <td>{{ i['to_date'] }}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+{% endblock %}

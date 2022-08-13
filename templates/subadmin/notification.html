@@ -1,0 +1,27 @@
+{% extends "subadmin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/subadmin_add_notification_post">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>Title</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Content</td>
+      <td><label for="textarea"></label>
+      <textarea name="textarea" id="textarea" cols="45" rows="5" class="form-control"></textarea></td>
+    </tr>
+      <tr>
+      <td>Date</td>
+      <td><label for="textfield1"></label>
+      <input type="date" name="textfield1" id="textfield1" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="ADD" CLASS="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

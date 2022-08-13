@@ -1,0 +1,19 @@
+{% extends "admin/adminblank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_edits_post">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+
+              <input type="hidden" name="nn" value="{{ data['did'] }}" /></td>
+
+      <td>Department Name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ data['department_name'] }}" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="SAVE" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

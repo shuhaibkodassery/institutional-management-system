@@ -1,0 +1,43 @@
+{% extends "staff/blank.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="466" border="1">
+    <tr>
+      <td width="32">from date</td>
+      <td width="144"><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+      <td width="26">to date</td>
+      <td width="144"><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" /></td>
+      <td width="86"><input type="submit" name="button" id="button" value="Search" /></td>
+    </tr>
+  </table>
+  <table width="200" border="1">
+    <tr>
+      <td>*</td>
+      <td>name</td>
+      <td>photo</td>
+      <td>reason</td>
+      <td>punishment</td>
+      <td>from date</td>
+      <td>to date</td>
+      <td>&nbsp;</td>
+    </tr>
+       {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i["name"] }}</td>
+      <td><img src="{{ i["photo"] }}" alt="" height="100px" width="100px"/></td>
+      <td>{{ i["reason"] }}</td>
+      <td>{{ i["punishment"] }}&nbsp;</td>
+      <td>{{ i["from_date"] }}&nbsp;</td>
+      <td>{{i["to_date"] }}&nbsp;</td>
+      <td><a href="/subadmin_edit_punishment/{{ i['pid'] }}">edit</a></td>
+      <td><a href="/subadmin_delete_punishment/{{ i['pid'] }}">delete</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

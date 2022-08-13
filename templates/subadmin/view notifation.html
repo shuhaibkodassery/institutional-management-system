@@ -1,0 +1,36 @@
+{% extends "subadmin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/subadmin_add_notification_search_post">
+  <table border="1" class="table table-bordered">
+     <tr>
+      <td>From</td>
+      <td>
+          <input type="date" name="textfield" id="textfield" CLASS="form-control"/></td>
+         <td>To</td>
+         <td>  <input type="date" name="textfield1" id="textfield" CLASS="form-control"/></td>
+         <td><input type="submit" name="button" id="button" value="search" CLASS="btn btn-success"/></td>
+    </tr>
+  </table>
+<table border="1" class="table table-bordered">
+    <tr>
+      <td>*</td>
+        <td>Date</td>
+      <td>Title</td>
+
+      <td>Content</td>
+      <td colspan="4">&nbsp;</td>
+    </tr>
+
+        {% for i in data %}
+
+      <td>{{ loop.index }}</td>
+      <td>{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['title'] }}</td>
+      <td>{{ i['content'] }}&nbsp;</td>
+            <td><p><a href="/subadmin_edit_notification/{{ i['nid'] }}" class="btn btn-success">EDIT</a></p></td>
+            <td><p><a href="/subadmin_delete_notification/{{ i['nid'] }}" onclick="return confirm('Do you want to delete this')" class="btn btn-success">DELETE</a></p></td>
+            <td><p><a href="#" class="btn btn-success">RENDER KEY</a></p></td>
+    </tr>
+          {% endfor %}
+  </table>
+</form>{% endblock %}

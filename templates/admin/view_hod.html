@@ -1,0 +1,36 @@
+{% extends "admin/adminblank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_add_hod_post">
+  <table width="200" border="1" CLASS="table table-bordered">
+    <tr>
+      <td>Department</td>
+      <td><select name="dept" CLASS="form-control">
+          {% for i in dept %}
+              <option value="{{ i["did"] }}">{{ i["department_name"] }}</option>
+          {% endfor %}
+      </select></td>
+      <td><input type="submit" name="button" id="button" value="GO" class="btn btn-success"/></td>
+    </tr>
+  </table>
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>*</td>
+      <td>Department</td>
+      <td>Staff</td>
+      <td></td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>&nbsp;{{ i["department_name"] }}</td>
+      <td><img src="{{ i["photo"] }}" alt="" height="100px" width="100px"/><br>{{i["staff_name"]  }}</td> &nbsp;</td>
+     <td><p><a href="/admin_edit_hod/{{ i['hid'] }} " class="btn btn-success">EDIT</a></p>
+        <td>
+      <p><a href="/admin_delete_hod/{{ i['hid'] }}" class="btn btn-success">DELETE</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+
+{% endblock %}

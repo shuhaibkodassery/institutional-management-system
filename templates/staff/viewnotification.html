@@ -1,0 +1,25 @@
+{% extends "staff/blank.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <td>*</td>
+      <td>title</td>
+      <td>content</td>
+
+    </tr>
+      {% for i in res %}
+    <tr>
+      <td>{{ loop.index }}&nbsp;</td>
+      <td>&nbsp;{{ i['title'] }}</td>
+      <td>{{ i['content'] }}</td>
+
+
+
+      {% endfor %}
+  </table>
+</form>
+
+
+{% endblock %}

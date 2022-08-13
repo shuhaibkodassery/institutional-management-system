@@ -1,0 +1,32 @@
+{% extends "admin/adminblank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/admin_add_dept_search_post">
+  <table width="200" border="1" class="table table-bordered" >
+    <tr>
+      <td><label for="textfield"></label>Department Name<br>
+      <input type="text" name="textfield" id="textfield" class="form-control" /></td>
+      <td><input type="submit" name="button" id="button" value="SEARCH" class="btn btn-success" /></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>*</td>
+      <td>Department Name</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i["department_name"] }}</td>
+      <td><a href="/admin_edit_dept/{{ i["did"] }}" class="btn btn-success">EDIT</a> </td>
+      <td><a href="/admin_delete_dept/{{ i["did"] }}" class="btn btn-success">DELETE</a> </td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</form>
+
+{% endblock %}

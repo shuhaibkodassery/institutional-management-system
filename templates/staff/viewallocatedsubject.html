@@ -1,0 +1,18 @@
+{% extends "staff/blank.html" %}
+{% block body %}
+
+
+<table border="1">
+    <tr>
+        <th>Sno</th>
+        <th>Subject Name</th>
+    </tr>
+    {% for i in data %}
+
+    <tr>
+        <td>{{ loop.index }}</td>
+        <td>{{ i['sub_name'] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

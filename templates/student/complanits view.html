@@ -1,0 +1,27 @@
+{% extends "student/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table class="table table-bordered">
+    <tr>
+      <th>#</th>
+      <th>date</th>
+      <th>complaints</th>
+      <th>status</th>
+      <th>replay</th>
+      <th>&nbsp;</th>
+    </tr>
+      {% for i in data %}
+
+    <tr>
+      <td>&nbsp;{{  loop.index}}</td>
+      <td>&nbsp;{{ i['date'] }}</td>
+      <td>&nbsp;{{ i['complint'] }}</td>
+      <td>&nbsp;{{ i['status'] }}</td>
+      <td>&nbsp;{{ i['reply'] }}</td>
+      <td width="50px"><a href="/student_delete_complaint/{{ i['cid'] }}" class="btn btn-danger">DELETE</a></td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+{% endblock %}

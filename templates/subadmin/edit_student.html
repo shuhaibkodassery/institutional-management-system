@@ -1,0 +1,74 @@
+{% extends "subadmin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/subadmin_edit_student_post" enctype="multipart/form-data">
+  <table width="200" border="1" class="table table-bordered">
+  <tr>
+      <td colspan="2"><img src="{{ data['photo'] }}" width="100%" height="100%" /></td>
+  </tr>
+  <input type="hidden" value="{{ data['sid'] }}" name="sid" >
+    <tr>
+      <td>Student Name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ data['sname'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="imageField" id="imageField"  width="150" height="150" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>
+          <input type="text" name="radio" id="radio" value="{{ data['gender'] }}" CLASS="form-control"/>
+      </td>
+    </tr>
+      <tr>
+      <td>Course</td>
+      <td>
+
+            <select name="dept" class="form-control">
+
+    <option>--select--</option>
+        {% for i in dept %}
+            {%  if data['cid']==i['course_id'] %}
+            <option value="{{ i["course_id"] }}" selected>{{ i["course_name"] }}</option>
+
+            {% else %}
+
+            <option value="{{ i["course_id"] }}" >{{ i["course_name"] }}</option>
+
+            {% endif %}
+        {% endfor %}
+    </select></td>
+    </tr>
+    <tr>
+      <td>Semester</td>
+      <td>
+      <input type="text" name="textfield2" id="textfield2" value="{{ data['sem'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Admission Number</td>
+      <td>
+      <input type="text" name="textfield3" id="textfield3" value="{{ data['admission_no'] }}" CLASS="form-control"/></td>
+    </tr>
+   <tr>
+      <td>DOB</td>
+      <td>
+      <input type="date" name="dob" id="dob" value="{{ data['dob'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Contact</td>
+      <td>
+      <input type="text" name="textfield4" id="textfield4" value="{{ data['contact'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>
+      <input type="text" name="textfield5" id="textfield5" value="{{ data['email'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+
+      <td colspan="2" align="center"><input type="submit" name="button" id="button" value="UPDATE" CLASS="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

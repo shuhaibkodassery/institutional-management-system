@@ -1,0 +1,41 @@
+{% extends "student/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table  class="table table-bordered">
+      {% for i in data %}
+    <tr>
+      <td colspan="2"><img src="{{ i['photo']}}" height="150px" width="300px" /></td>
+    </tr>
+
+    <tr>
+      <td width="150px">Name</td>
+      <td>&nbsp;{{ i['sname'] }}</td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+      <td>&nbsp;{{ i['gender'] }}</td>
+    </tr>
+    <tr>
+      <td>DOB</td>
+      <td>&nbsp;{{ i['dob'] }}</td>
+    </tr>
+    <tr>
+      <td>admission no</td>
+      <td>&nbsp;{{ i['admission_no'] }}</td>
+    </tr>
+    <tr>
+    <td>Contact</td>
+      <td>&nbsp;{{ i['contact'] }}</td>
+  </tr>
+   <tr>
+      <td>Email</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+  </tr>
+     <tr>
+      <td>address</td>
+      <td>{{ i['city'] }} <br>{{i['place'] }}</td>
+  </tr>
+  </table>
+    {% endfor %}
+</form>
+{% endblock %}

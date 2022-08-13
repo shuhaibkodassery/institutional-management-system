@@ -1,0 +1,42 @@
+{% extends "subadmin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/subadmin_add_punishment_post" enctype="multipart/form-data">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>Name</td>
+      <td>
+      <input type="text" name="textfield" id="textfield"  CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><input type="file" name="imageField" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Reason</td>
+      <td>
+      <input type="text" name="textfield2" id="textfield2" CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Punishment</td>
+      <td>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>From Date</td>
+      <td>
+      <input type="date" name="textfield4" id="textfield4"  CLASS="form-control"/></td>
+    </tr>
+    <tr>
+      <td>To Date</td>
+      <td>
+      <input type="date" name="textfield5" id="textfield5" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="SAVE" CLASS="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+
+
+{% endblock %}

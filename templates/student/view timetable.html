@@ -1,0 +1,56 @@
+{% extends "student/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <td>#</td>
+      <td>hour 1</td>
+      <td>hour 2</td>
+      <td>hour 3</td>
+      <td>hour 4</td>
+      <td>hour 5</td>
+    </tr>
+
+    <tr>
+      <td>monday</td>
+      <td>{{ a[0][0] }}</td>
+      <td>{{ a[0][1] }}</td>
+      <td>&nbsp;{{ a[0][2] }}</td>
+      <td>&nbsp;{{ a[0][3] }}</td>
+      <td>&nbsp;{{ a[0][4] }}</td>
+    </tr>
+    <tr>
+      <td>tuesday</td>
+      <td>&nbsp;{{ a[1][0] }}</td>
+      <td>&nbsp;{{ a[1][1] }}</td>
+      <td>&nbsp;{{ a[1][2] }}</td>
+      <td>&nbsp;{{ a[1][3] }}</td>
+      <td>&nbsp;{{ a[1][4] }}</td>
+    </tr>
+    <tr>
+      <td>wednesday</td>
+      <td>&nbsp;{{ a[2][0] }}</td>
+      <td>&nbsp;{{ a[2][1] }}</td>
+      <td>&nbsp;{{ a[2][2] }}</td>
+      <td>&nbsp;{{ a[2][3] }}</td>
+      <td>&nbsp;{{ a[2][4] }}</td>
+    </tr>
+    <tr>
+      <td>thursday</td>
+      <td>&nbsp;{{ a[3][0] }}</td>
+      <td>&nbsp;{{ a[3][1] }}</td>
+      <td>&nbsp;{{ a[3][2] }}</td>
+      <td>&nbsp;{{ a[3][3] }}</td>
+      <td>&nbsp;{{ a[3][4] }}</td>
+    </tr>
+    <tr>
+      <td>friday</td>
+      <td>&nbsp;{{ a[4][0] }}</td>
+      <td>&nbsp;{{ a[4][1] }}</td>
+      <td>&nbsp;{{ a[4][2] }}</td>
+      <td>&nbsp;{{ a[4][3] }}</td>
+      <td>&nbsp;{{ a[4][4] }}</td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

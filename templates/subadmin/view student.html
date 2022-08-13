@@ -1,0 +1,47 @@
+{% extends "subadmin/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/subadmin_add_student_search_post" enctype="multipart/form-data">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>Student Name</td>
+      <td>
+      <input type="text" name="textfield" id="textfield" class="form-control" /></td>
+      <td><input type="submit" name="button" id="button" value="GO" CLASS="btn btn-success"/></td>
+    </tr>
+  </table>
+  <table width="200" border="1" CLASS="table table-bordered">
+    <tr>
+        <td>*</td>
+      <td>Student Name</td>
+      <td>Photo</td>
+      <td>Gender</td>
+        <td>Course</td>
+      <td>Sem</td>
+      <td>Admission </td>
+      <td>BOD</td>
+      <td>Contact</td>
+      <td>Email</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['sname'] }}</td>
+      <td><img src="{{ i["photo"] }}" alt="" height="100px" width="100px"/></td>
+      <td>&nbsp;{{ i['gender'] }}</td>
+        <td>&nbsp;{{ i['course_name'] }}</td>
+      <td>&nbsp;{{ i['sem'] }}</td>
+      <td>&nbsp;{{ i['admission_no'] }}</td>
+      <td>&nbsp;{{ i['dob'] }}</td>
+      <td>&nbsp;{{ i['contact'] }}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+        <td><p><a href="/subadmin_edit_student/{{ i['sid'] }}" class="btn btn-success">EDIT</a></p></td>
+       <td> <p><a href="/subadmin_delete_student/{{ i['sid'] }}"CLASS="btn btn-success">DELETE</a></p></td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+
+
+{% endblock %}

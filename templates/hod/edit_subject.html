@@ -1,0 +1,44 @@
+{% extends "hod/blank.html" %}
+{% block body %}
+<form id="form2" name="form2" method="post" action="/edit_subject_post">
+    <table width="200" border="1" CLASS="table table-bordered">
+        <tr>
+            <td>Course</td>
+            <td><select name="textfield" class="form-control">
+                <option>--select--</option>
+                {% for i in res1 %}
+                    {% if i['course_id']== res['cid'] %}
+                        <option value="{{ i['course_id'] }}" selected>{{ i['course_name'] }}</option>
+                    {% else %}
+                        <option value="{{ i['course_id'] }}" >{{ i['course_name'] }}</option>
+                    {% endif %}
+                {% endfor %}
+            </select></td>
+        </tr>
+        <tr>
+            <td>Semester</td>
+            <td>
+                <label for="textfield2"></label>
+                <input type="hidden" name="id" id="textfield2" value="{{ res['sub_id'] }}" class="form-control"/>
+                <input type="text" name="textfield2" id="textfield2" value="{{ res['sem'] }}" CLASS="form-control"/></td>
+        </tr>
+        <tr>
+            <td>Subject Code</td>
+            <td>
+
+                <input type="text" name="textfield3" id="textfield3" value="{{ res['sub_code'] }}" class="form-control"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Subject Name</td>
+            <td><input type="text" name="textfield4" id="textfield4" value="{{ res['sub_name'] }}" CLASS="form-control"/></td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" name="button" id="button" value="SAVE" class="btn btn-success"/></td>
+        </tr>
+    </table>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "hod/blank.html" %}
+{% block body %}
+<form id="form2" name="form2" method="post" action="/hod_add_subject">
+<table width="200" border="1">
+  <tr>
+    <td>course</td>
+    <td><select name="textfield">
+    <option>--select--</option>
+        {% for i in data %}
+        <option value="{{ i['course_id'] }}">{{ i['course_name'] }}</option>
+        {% endfor %}
+    </select></td>
+  </tr>
+  <tr>
+    <td>semester</td>
+    <td>
+      <label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" /></td>
+  </tr>
+  <tr>
+    <td>subject code</td>
+    <td>
+      <label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" />
+    </td>
+  </tr>
+  <tr>
+    <td>subject name</td>
+    <td><input type="text" name="textfield4" id="textfield4" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="button" id="button" value="save" /></td>
+  </tr>
+</table>
+</form>
+
+{% endblock %}

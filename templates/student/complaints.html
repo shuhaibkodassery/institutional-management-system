@@ -1,0 +1,27 @@
+{% extends "student/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/student_send_complaint_post">
+
+<table class="table table-bordered">
+
+
+  <tr>
+    <td>complaint</td>
+    <td>
+      <textarea rows="10" cols="10" name="textarea" class="form-control">
+      </textarea>
+   </td>
+  </tr>
+
+
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+      <input type="submit" name="button" id="button" value="send" class="btn btn-success" />
+  </td>
+  </tr>
+</table>
+</form>
+
+
+{% endblock %}

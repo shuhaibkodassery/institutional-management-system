@@ -1,0 +1,82 @@
+{% extends "admin/adminblank.html" %}
+{% block body %}
+<form action="/admin_edit_subadmin_post" enctype="multipart/form-data" method="post"  name="form1" id="form1">
+  <table width="200" border="1" class="table table-bordered">
+
+
+        <input type="hidden" name="idk" id="idk" value="{{ data['subadmin_id'] }}" /></td>
+
+    <tr>
+      <td>Name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" value="{{ data['name'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Gender</td>
+
+        {% if data['gender']=="male" %}
+      <td>Male<input type="radio" name="radio" id="radio" value="male"  checked="checked" />
+        Female<input type="radio" name="radio" id="radio3" value="female" />
+        <label for="radio3"></label>
+
+          Others
+          <input type="radio" name="radio" id="radio2" value="other" />
+          </td>
+
+        {% endif %}
+
+
+
+      {% if data['gender']=="female" %}
+      <td>Male<input type="radio" name="radio" id="radio" value="male" />
+        Female<input type="radio" name="radio" id="radio3" value="female" checked="checked"/>
+        <label for="radio3"></label>
+
+          Others
+          <input type="radio" name="radio" id="radio2" value="other" />
+          </td>
+
+        {% endif %}
+
+
+
+      {% if data['gender']=="other" %}
+      <td>Male<input type="radio" name="radio" id="radio" value="male" />
+        Female<input type="radio" name="radio" id="radio3" value="female" />
+        <label for="radio3"></label>
+
+          Others
+          <input type="radio" name="radio" id="radio2" value="other" checked="checked" />
+          </td>
+
+        {% endif %}
+    </tr>
+    <tr>
+      <td>Phone</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2"  value="{{ data['phone'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3"  value="{{ data['email'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <td>Designation</td>
+      <td><label for="select"></label>
+        <input type="text" name="textfield4" id="textfield4" value="{{ data['designation'] }}" class="form-control"/></td>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="UPDATE" class="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

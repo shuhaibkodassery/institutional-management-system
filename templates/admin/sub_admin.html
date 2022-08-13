@@ -1,0 +1,47 @@
+{% extends "admin/adminblank.html" %}
+{% block body %}
+<form action="/admin_add_subadmin_post" enctype="multipart/form-data" method="post"  name="form1" id="form1">
+  <table class="table table-bordered">
+    <tr>
+      <td>Name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>gender</td>
+      <td>Male<input type="radio" name="radio" id="radio" value="male" />
+        Female<input type="radio" name="radio" id="radio3" value="female" />
+        <label for="radio3"></label>
+          
+          Others
+          <input type="radio" name="radio" id="radio2" value="other" />
+          </td>
+    </tr>
+    <tr>
+      <td>phone</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Photo</td>
+      <td><label for="fileField"></label>
+      <input type="file" name="fileField" id="fileField"  class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td><label for="textfield3"></label>
+      <input type="text" name="textfield3" id="textfield3" class="form-control" /></td>
+    </tr>
+    <tr>
+      <td>Designation</td>
+      <td><label for="select"></label>
+        <input type="text" name="textfield4" id="textfield4" class="form-control" /></td>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="save" class="btn btn-success" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

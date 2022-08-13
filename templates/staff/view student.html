@@ -1,0 +1,49 @@
+{% extends "staff/blank.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <td>student name</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+      <td><input type="submit" name="button" id="button" value="go" /></td>
+    </tr>
+  </table>
+  <table width="200" border="1">
+    <tr>
+      <td>*</td>
+      <td>student name</td>
+      <td>photo</td>
+      <td>gender</td>
+        <td>course</td>
+      <td>sem</td>
+      <td>admission </td>
+      <td>dob</td>
+      <td>contact</td>
+      <td>email</td>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in data %}
+
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['sname'] }}</td>
+      <td><img src="{{ i["photo"] }}" alt="" height="100px" width="100px"/></td>
+      <td>&nbsp;{{ i['gender'] }}</td>
+        <td>&nbsp;{{ i['course_name'] }}</td>
+      <td>&nbsp;{{ i['sem'] }}</td>
+      <td>&nbsp;{{ i['admission_no'] }}</td>
+      <td>&nbsp;{{ i['dob'] }}</td>
+      <td>&nbsp;{{ i['contact'] }}</td>
+      <td>&nbsp;{{ i['email'] }}</td>
+
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+
+
+
+{% endblock %}

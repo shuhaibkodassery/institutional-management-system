@@ -1,0 +1,54 @@
+{% extends "hod/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/hod_add_staff_subject_allocation_post">
+  <table width="200" border="1" class="table table-bordered">
+    <tr>
+      <td>Staff</td>
+      <td><select name="textfield" class="form-control">
+      <option value="{{ edit['staff_name`'] }}"></option>
+    <option>--select--</option>
+        {% for i in res1 %}
+        <option value="{{ i['staff_id'] }}">{{ i['staff_name'] }}</option>
+        {% endfor %}
+    </select></td>
+    </tr>
+    <tr>
+      <td>Course</td>
+    <td><select name="textfield1" class="form-control">
+    <option>--select--</option>
+        {% for i in data %}
+        <option value="{{ i['course_id'] }}">{{ i['course_name'] }}</option>
+        {% endfor %}
+    </select></td>
+    <tr>
+      <td>Semester</td>
+     <td><select name="textfield2" CLASS="form-control">
+         <option value="{{ edit[''] }}"></option>
+    <option>--select--</option>
+
+         <option value="1">1</option>
+         <option value="2">2</option>
+         <option value="3">3</option>
+         <option value="4">4</option>
+         <option value="5">5</option>
+         <option value="6">6</option>
+
+    </select></td>
+    </tr>
+    <tr>
+      <td>Subject</td>
+      <td><select name="textfield3" class="form-control">
+    <option>--select--</option>
+        {% for i in res2 %}
+        <option value="{{ i['sub_id'] }}">{{ i['sub_name'] }}</option>
+        {% endfor %}
+    </select></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><input type="submit" name="button" id="button" value="SAVE" CLASS="btn btn-success"/></td>
+    </tr>
+  </table>
+</form>
+
+{% endblock %}

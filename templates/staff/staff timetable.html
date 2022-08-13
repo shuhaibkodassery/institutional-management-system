@@ -1,0 +1,26 @@
+{% extends "staff/blank.html" %}
+{% block body %}
+
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <td>day</td>
+      <td>hour</td>
+      <td>course</td>
+      <td>sem</td>
+      <td>subject</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ i['day'] }}</td>
+      <td>&nbsp;{{ i['hour'] }}</td>
+      <td>&nbsp;{{ i['course_name'] }}</td>
+      <td>&nbsp;{{ i['sem'] }}</td>
+      <td>&nbsp;{{ i['sub_name'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+
+
+{% endblock %}

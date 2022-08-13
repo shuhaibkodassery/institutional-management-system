@@ -1,0 +1,35 @@
+{% extends "student/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="/student_view_internal_mark_post">
+  <table width="200" border="1">
+    <tr>
+      <td>semester</td><td>
+        <select name="select" id="select">
+      <label for="select"></label>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+      </select></td>
+      <td><input type="submit" name="button" id="button" value="show" /></td>
+    </tr>
+  </table>
+  <table width="200" border="1">
+    <tr>
+      <td>#</td>
+      <td>subject name</td>
+      <td>mark</td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>&nbsp;{{ loop.index }}</td>
+      <td>&nbsp;{{ i['sub_name'] }}</td>
+      <td>&nbsp;{{ i['mark'] }}</td>
+    </tr>
+      {% endfor %}
+  </table>
+  <p>&nbsp;</p>
+</form>
+{% endblock %}

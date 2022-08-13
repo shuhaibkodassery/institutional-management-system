@@ -1,0 +1,38 @@
+{% extends "hod/blank.html" %}
+{% block body %}
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1">
+    <tr>
+      <td>subject</td>
+      <td><label for="textfield"></label>
+      <input type="text" name="textfield" id="textfield" /></td>
+      <td>course</td>
+      <td><label for="textfield2"></label>
+      <input type="text" name="textfield2" id="textfield2" /></td>
+      <td><input type="submit" name="button" id="button" value="go" /></td>
+    </tr>
+  </table>
+  <table width="200" border="1">
+    <tr>
+      <td>*</td>
+      <td>subject</td>
+      <td>course</td>
+      <td>day</td>
+      <td>hour</td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td>&nbsp;</td>
+      <td><a href="#">remove</a></td>
+    </tr>
+  </table>
+  <p>&nbsp;</p>
+</form>
+
+
+
+{% endblock %}
